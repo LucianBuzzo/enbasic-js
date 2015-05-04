@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>enBasicJS</title>
+  <style>
+    body {
+      font-family: arial, sans-serif;
+      padding: 0 15px;
+    }
+    .red {
+      color: red;
+    }
+    .green {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>enBasicJS</h1>
+  <form id="basic-form" onsubmit="parse(); return false;">
+    <input type="text" id="basic-input" value="enter text to be checked.." />
+    <input type="submit" onclick="parse(); return false;" value="Parse" />
+  </form>
+
+  <p id="basic-output"></p>
+
+  <script src="en-basic.js"></script>
+  <script>
+    function parse(e) {
+      if (e) e.preventDefault();
+      var input = document.getElementById('basic-input');
+      var output = document.getElementById('basic-output');
+      var text = input.value;
+      output.innerHTML = enBasic.highlight(text);
+    }
+  </script>
+</body>
+</html>
